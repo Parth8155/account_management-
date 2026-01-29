@@ -40,3 +40,13 @@
 .read-the-docs {
   color: #888;
 }
+
+/* small tweaks for account app layout */
+.app-root {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+form .form-label {
+  font-weight: 600;
+}

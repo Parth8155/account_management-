@@ -9,7 +9,32 @@ Currently, two official plugins are available:
 
 ## React Compiler
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## React Interns Interview Practical
+
+This repository contains a small React application built for the React internship practical (REACTIIP01002). The app demonstrates a minimal account management flow with register, login, and an account edit page.
+
+Key details:
+- Uses Vite + React
+- Uses Bootstrap 5 for basic styling
+- Authentication is simulated with `localStorage` (no backend)
+
+Getting started:
+
+1. Install dependencies
+
+```bash
+npm install
+```
+
+2. Run the dev server
+
+```bash
+npm run dev
+```
+
+Notes:
+- This implementation is intentionally simple and readable — it is meant for evaluation during the interview practical. Passwords are stored in `localStorage` for the exercise only (not for production).
+- See `src/utils/auth.js` for the small client-side auth helpers.
 
 ## Expanding the ESLint configuration
 

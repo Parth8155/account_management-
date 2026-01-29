@@ -24,8 +24,7 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
+  /* Use normal flow so app layout (container, navbar, etc.) behaves as expected */
   min-width: 320px;
   min-height: 100vh;
 }
