@@ -1,24 +1,16 @@
-# React + Vite
+# React + Vite — Account App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Minimal React application scaffolded with Vite. This project implements a tiny account management flow (register, login, edit) intended for learning and interview practicals.
 
-Currently, two official plugins are available:
+Built with:
+- Vite + React
+- Bootstrap 5 for simple UI
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Key points
+- Authentication is simulated client-side using `localStorage` — this is for demonstration only and NOT secure for production.
+- The authentication helpers live in `src/utils/auth.js`.
 
-## React Compiler
-
-## React Interns Interview Practical
-
-This repository contains a small React application built for the React internship practical (REACTIIP01002). The app demonstrates a minimal account management flow with register, login, and an account edit page.
-
-Key details:
-- Uses Vite + React
-- Uses Bootstrap 5 for basic styling
-- Authentication is simulated with `localStorage` (no backend)
-
-Getting started:
+Quick Start
 
 1. Install dependencies
 
@@ -26,16 +18,34 @@ Getting started:
 npm install
 ```
 
-2. Run the dev server
+2. Start development server
 
 ```bash
 npm run dev
 ```
 
-Notes:
-- This implementation is intentionally simple and readable — it is meant for evaluation during the interview practical. Passwords are stored in `localStorage` for the exercise only (not for production).
-- See `src/utils/auth.js` for the small client-side auth helpers.
+3. Open the app in your browser (Vite will show the URL, usually `http://localhost:5173`).
 
-## Expanding the ESLint configuration
+Available scripts (package.json)
+- `dev` — run the Vite dev server with HMR
+- `build` — produce a production build
+- `preview` — preview the production build locally
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Project structure (important files)
+- `index.html` — app entry HTML
+- `src/main.jsx` — app bootstrap
+- `src/App.jsx` — main application component
+- `src/pages/` — `Login.jsx`, `Register.jsx`, `Account.jsx` (page components)
+- `src/components/NavBar.jsx` — navigation
+- `src/utils/auth.js` — client-side auth helpers (register/login/logout; persists to `localStorage`)
+
+Authentication (notes)
+- This app simulates authentication by saving a user record and an auth token to `localStorage`.
+- Passwords are stored in plain text here for simplicity — do not do this in real apps.
+- The flows implemented: register, login, logout, and simple protected-account editing.
+
+Security & production notes
+- Replace the client-only auth with a real backend and use secure storage for tokens (HTTP-only cookies or secure storage on the client with proper protections).
+- Never store passwords in `localStorage` or plain text in any real product.
+
+
